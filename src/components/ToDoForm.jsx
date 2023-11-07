@@ -47,12 +47,13 @@ export default function ToDoForm({ setToDos }) {
   }
 
   return (
-    <section className="flex justify-center items-center py-20">
+    <section className="flex justify-center items-center py-20 gap-2">
       <input
         type="date"
         {...dateAttributes}
         onChange={changeGoalDate}
         onKeyDown={(e) => e.preventDefault()}
+        className="border-b-2 outline-none px-5 py-4  text-3xl"
       />
       <input
         onKeyDown={addToDo}
@@ -60,8 +61,14 @@ export default function ToDoForm({ setToDos }) {
         type="text"
         name="task"
         id=""
+        placeholder="Todo..."
       />
-      <select name="priority" id="priority" onChange={changePriority}>
+      <select
+        name="priority"
+        id="priority"
+        onChange={changePriority}
+        className="border-b-2 outline-none px-5 py-4  text-2xl"
+      >
         <option value="1">High</option>
         <option value="2">Low</option>
       </select>

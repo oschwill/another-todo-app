@@ -43,6 +43,22 @@ const SortOrder = ({ sortType, sortItems }) => {
       >
         lowest Prio
       </p>
+      <p
+        className={`w-28 p-1 pl-2 pr-2 text-center text-white font-bold cursor-pointer hover:bg-slate-400 ${
+          sortType === 'dead-asc' ? 'bg-slate-400' : 'bg-gray-600'
+        } `}
+        onClick={() => sortItems('dead-asc')}
+      >
+        deadline asc
+      </p>
+      <p
+        className={`w-34 p-1 pl-2 pr-2 text-center text-white font-bold cursor-pointer hover:bg-slate-400 ${
+          sortType === 'dead-desc' ? 'bg-slate-400' : 'bg-gray-600'
+        } `}
+        onClick={() => sortItems('dead-desc')}
+      >
+        deadline desc
+      </p>
     </div>
   );
 };

@@ -31,6 +31,12 @@ export default function ToDoList({ items, setToDos }) {
       case 'low':
         setSortedItem(items.filter((item) => item.priority === 2));
         break;
+      case 'dead-asc':
+        setSortedItem([...items].sort((a, b) => a.goalDate - b.goalDate));
+        break;
+      case 'dead-desc':
+        setSortedItem([...items].sort((a, b) => b.goalDate - a.goalDate));
+        break;
 
       default:
         break;
@@ -39,7 +45,7 @@ export default function ToDoList({ items, setToDos }) {
 
   return (
     <>
-      <section className="flex flex-col items-center w-full gap-5 ">
+      <section className="flex flex-col items-center w-full gap-5  ">
         {sortedItem &&
           sortedItem?.map((item, key) => (
             <ToDoItem todo={item} key={key + item.task} setToDos={setToDos} />

@@ -1,7 +1,7 @@
 const MaxDays = [31, 30, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
 export const calculateAge = (_actualDate, _futureDate) => {
-  let age_dt = new Date(Date.now() - _actualDate.getTime());
+  let age_dt = new Date(_futureDate.getTime() - Date.now());
 
   let years = Math.abs(age_dt.getUTCFullYear() - 1970);
   let months = Math.abs(age_dt.getUTCMonth());

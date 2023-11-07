@@ -21,7 +21,7 @@ export default function ToDoItem({ todo, setToDos }) {
   function returnDaysLeft() {
     const { years, months, days } = calculateAge(new Date(), todo.goalDate);
     return (
-      <span className="ml-auto pl-4 pr-4 text-red-800 font-bold text-sm bg-slate-200 text-center ">
+      <span className="ml-auto pl-4 pr-4 text-red-800 font-bold text-sm bg-slate-200 text-center flex items-center ">
         {days}d {months}m {years}y
       </span>
     );
@@ -31,7 +31,7 @@ export default function ToDoItem({ todo, setToDos }) {
     <section
       onClick={changeDone}
       className={
-        ' w-8/12 p-2 min-h-2/12 bg-purple-400 text-white font-mono text-2xl flex ' +
+        ' w-8/12 p-2 min-h-2/12 bg-purple-400 text-white font-mono text-2xl flex cursor-pointer hover:bg-purple-600 ' +
         (todo.done ? 'line-through' : '')
       }
     >
@@ -41,9 +41,6 @@ export default function ToDoItem({ todo, setToDos }) {
           X
         </button>
       )}
-      {/* <span className="ml-auto pl-4 pr-4 text-red-800 font-bold text-sm bg-slate-200 text-center ">
-        {todo.goalDate.getDate() - new Date().getDate()} days
-      </span> */}
       {returnDaysLeft()}
       <span className="ml-auto pr-4">
         {todo.priority === 1 ? (
